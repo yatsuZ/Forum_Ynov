@@ -1,0 +1,71 @@
+{{define "dashboard"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> dashboard </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/normalize.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <img id="mainLogo" src="/img/logo.png" alt="">
+        <ul>
+            <li><a href="/homeUser"> Acceuil</a></li>
+            <li><a href="/dashboard"> Create Post </a></li>
+        </ul>
+        <div></div>
+    </header> <!--End of Header-->
+    
+    <div id="pageContent" class="dashboard">
+        <section>
+            <h1>
+                Dashboard
+            </h1>
+            <form action="/post" method="POST">
+
+                <label for="postText"></label>
+                <input type="text" name="postText" placeholder=" Post Anything Here" minlength="10" maxlength="200"/>
+
+
+                <select class="selectDashboard" data-placeholder="Choose catégorie ..." name="categories" multiple>
+                    <option name="1" value="1">tech</option>
+                    <option name="2" value="2">film</option>
+                    <option name="3" value="3">sport</option>
+                    <option name="4" value="4">anime</option>
+                    <option name="5"value="5">music</option>
+                    <option name="6"value="6">other</option><!-- form ? -->
+                  </select>
+                  <input type="submit" class="post" name="post" value="Post">
+            </form>
+             
+              <h1> Posts : </h1>  
+              <div class="postsPlage">  
+                   {{  range . }}
+                  <div class="postsBox"> {{ .Content }} </div>    
+                  {{ end}}
+                </div>
+        </section>
+
+    </div> <!--End of pageContent-->
+    <footer id="mainFooter"></footer> <!--End of Footer-->
+
+    
+    <!-- <div>
+        {{ if .Alert }}               
+        <div class="snackbar">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{ .Alert }}
+        </div>
+        {{ end }}
+    </div> -->
+
+    
+
+</body>
+</html>
+{{end}}
+
+

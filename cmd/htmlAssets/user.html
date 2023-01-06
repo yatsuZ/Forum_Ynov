@@ -1,0 +1,35 @@
+{{define "userpage"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> userPage </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/normalize.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    
+    <header id="mainHeader">
+        <a href=""><img src="" alt=""></a>
+        <ul>
+            <li><a href="/homeuser"> Home {{.Name}} </a></li>
+
+        </ul>
+        <div></div>
+    </header> <!--End of Header-->
+    <main id="pageContent">
+        <h1>
+            Hello
+        </h1>
+        <h2>
+            ID = {{.Id}} <br> Name ={{.Name}} <br> Email = {{.Email}} <br> PWD = {{.Pasword}} 
+        </h2>
+    </main> <!--End of pageContent-->
+    <footer id="mainFooter"></footer> <!--End of Footer-->
+
+
+</body>
+</html>
+{{end}}

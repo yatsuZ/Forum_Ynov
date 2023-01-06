@@ -1,0 +1,61 @@
+{{define "homeUser"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Acceuil </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/normalize.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    
+    <header id="mainHeader">
+        <a href="/"><img id="mainLogo" src="/img/logo.png" alt="blabla"></a>
+        <ul>
+            <li><a href="/homeuser"> Acceuil</a></li>
+            <li><a href="/dashboard"> Create Post </a></li>
+        </ul>
+        <div></div>
+    </header> <!--End of Header-->
+    <main id="pageContent" class="acceuil">
+        <div class="alert">           
+            {{ if .Alert }}
+                <div class="snackbar">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    {{ .Alert }}
+                </div>
+            {{ end }}
+        </div>
+        <section>
+                <h1>
+                    HOME USER
+                </h1> 
+                    <!-- 
+                        type Post struct {
+                        Id             int       //clé primaire du post
+                        Created_At     time.Time //Date de la publication //Moi mr METEHRI
+                        Content        string    //Conteneue du post
+                        User_id        int       //Clé etranger qui est un id d'un user existant
+                        User_name      string
+                        CategoriePost  []string //tableau de categorie
+                        Number_Like    int      //Number    //Nombre de like
+                        Number_Dislike int      //Nombre de dislike
+                    }
+                    -->
+                {{range .Posts}}
+                <a href="/comment/{{.Id}}">
+                    <div class="post">
+                        {{.Content}}
+                    </div class="post">
+                </a>
+                {{end}}
+    </section>
+    </main> <!--End of pageContent-->
+    <footer id="mainFooter"></footer> <!--End of Footer-->
+
+
+</body>
+</html>
+{{end}}

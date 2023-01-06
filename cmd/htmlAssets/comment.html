@@ -1,0 +1,54 @@
+{{define "comment"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Coment </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/normalize.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    
+    <header id="mainHeader">
+        <a href="/"><img id="mainLogo" src="/img/logo.png" alt="blabla"></a>
+        <ul>
+            <li><a href="/homeUser"> Acceuil</a></li>
+            <li><a href="/dashboard"> Create Post </a></li>
+        </ul>
+        <div></div>
+    </header> <!--End of Header-->
+    <main id="pageContent" class="acceuil">
+        <section>
+        <h1>
+            Comment POST made the {{.Created_At}} =
+        </h1>
+
+        <p>
+        {{.User_name}} a poster : <br> {{.Content}}
+        </p>
+        <br>
+        {{.AllComment}}
+        <h2>ALL Comment</h2>
+        {{range .AllComment}}
+        <p>
+        {{.Auteur}} a commenter {{.Content}}
+        </p>
+        <p>--------------------------------------------------------------------</p><br>
+        {{end}}
+
+        <form action="/NEWcomment/{{.Id}}" method="POST">
+
+            <label for="commentText"></label>
+            <input type="text" name="commentText" placeholder=" comment Anything Here" minlength="10" maxlength="200"/>
+            <input type="submit" class="post" name="post" value="Post">
+        </form>
+    </section>
+    </main> <!--End of pageContent-->
+    <footer id="mainFooter"></footer> <!--End of Footer-->
+
+
+</body>
+</html>
+{{end}}

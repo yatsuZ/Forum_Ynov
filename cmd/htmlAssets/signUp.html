@@ -1,0 +1,73 @@
+{{define "signUp"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Sign Up </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/normalize.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    
+
+    <header id="mainHeader" class="inscription">
+        <a href=""><img id="mainLogo" src="/img/logo.png" alt=""></a>
+            <ul>
+                <li><a href="/"> Acceuil</a></li>
+                <li><a href="/signin"> SignIn </a></li>
+                <li><a href="/signup"> SignUp </a></li>
+            </ul>
+        <div></div>
+    </header> <!--End of Header -->
+
+
+      {{ if .Alert }}
+                            
+                            <div class="snackbar">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  {{ .Alert }}
+</div>
+        {{ end }}
+    <main id="pageContent" class="inscription">
+        <section>
+            <div>
+                <h1>
+                    Sign Up
+                </h1>
+                <div>
+                    Si tu n'as pas de compte deja existant Inscris toi.<br>
+                    <a href="/signin">Sinon Connecte toi. </a>
+                </div>
+            </div>
+            <form action="/verifsignup" method="POST">
+                <div>
+                    <label for="email"> Email</label>
+                    <input type="email" name="email" id="email" required/>
+                </div>
+                <div>
+                    <label for="name"> Username </label>
+                    <input type="text" name="name" required/>
+                </div>
+                <div>
+                    <label for="password"> Password </label>
+                    <input type="password" name="password" required/>
+                </div>
+                <div>Re écrivait le mot de passe pour verifier que c'est le meme</div>
+                <div>
+                    <label for="verification"> Verification </label>
+                    <input type="password" name="verification" required/>
+                </div>
+    
+                <button type="submit"> Register </button>
+            </form>
+    </section>
+
+    </main> <!--End of pageContent-->
+    <footer id="mainFooter"></footer> <!--End of Footer-->
+
+
+</body>
+</html>
+{{end}}

@@ -1,0 +1,202 @@
+
+
+#mainHeader {
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    display: grid;
+    grid-template-columns: 200px 400px 1fr;
+  }
+  #mainLogo {
+    width: 220px;
+    margin: 10px;
+    position: relative;
+    z-index: 1000;
+}
+  #mainHeader > ul {
+    text-transform: uppercase;
+  
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  #mainHeader > ul > li > a {
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 100px;
+  }
+
+
+
+  #mainFooter {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+  #mainFooter p {
+    margin: 0;
+    padding: 3px;
+  }
+
+  #pageContent.dashboard main {
+    background-color: #fff;
+  }
+
+  #pageContent.dashboard > h1 {
+    font-size: 2em;
+    color: brown;
+  }
+
+#pageContent.dashboard form{
+  display: flex;
+  flex-direction: column;
+}
+
+#pageContent.dashboard form select {
+  height: 40px;
+}
+
+#pageContent.dashboard form input[type=text]{
+  width:  100%;
+  height: 100px;
+  background-color: black;
+  color: white
+}
+
+#pageContent.dashboard .postsPlage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#pageContent.dashboard .postsBox{
+  margin: 100px;
+  width: 350px;
+  height: 350px;
+  background-color: black;
+  color: white;
+  border: 5px solid #23b2a4;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('/img/ynov.jpg') center center / cover no-repeat fixed;
+
+  border-image: stretch;
+}
+
+#pageContent.connexion section {
+  width: 25%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2.5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+#pageContent.connexion section form div {
+  margin: 30px;
+}
+#pageContent.connexion section form button {
+  background-color: cadetblue;
+  width: 100%;
+}
+#pageContent.connexion section form button:hover {
+  background-color: orangered;
+}
+#pageContent.inscription section {
+  width: 25%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2.5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+#pageContent.inscription section form div {
+  margin: 30px;
+}
+#pageContent.inscription section form button {
+  background-color: cadetblue;
+  width: 100%;
+}
+#pageContent.inscription section form button:hover {
+  background-color: orangered;
+}
+
+#pageContent.acceuil section{
+  background-color: rgba(255, 255, 255, 0.8);
+  height: max-content;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 1.1%;
+  border: 3px #333 solid;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+/* #pageContent.acceuil section .post{
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 250px;
+  border: 2.5px #333 solid;
+  border-radius: 2.5%;
+  margin: 30px;
+} */
+
+.snackbar {
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 30px;
+}
+
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
